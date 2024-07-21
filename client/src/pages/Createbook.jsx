@@ -29,6 +29,10 @@ const Createbook = () => {
       console.log(err)
     })
   }
+
+  useEffect(() => {
+    handelsavebook()
+  }, [])
   return (
     <div className='p-4'>
       <Backbutton/>
