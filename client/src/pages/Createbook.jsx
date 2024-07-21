@@ -13,21 +13,25 @@ const Createbook = () => {
   const navigate = useNavigate()
 
   const handelsavebook = async () => { 
+    if(!title || !author || !publishYear) {
+      alert("Please fill all the fields")
+      return
+    }
+    console.log(title, author, publishYear)
+
+    const newBook = {
+      title,
+      author,
+      publishYear 
+    }
+    setLoading(true)
     try {
-      const newBook = {
-        title,
-        author,
-        publishYear 
-      }
-      setLoading(true)
-      await axios.post("https://book-store-mern-back.vercel.app/books", newBook).then
-      (() => {
+      await axios.post("https://book-store-mern-back.vercel.app/books", newBook)
         setLoading(false)
         navigate("/")
-      })  
     } catch (error) {   
       setLoading(false)
-      alert("All fields Are Required")
+      alert("Something went wrong")
       console.log(error)
     } 
   }
