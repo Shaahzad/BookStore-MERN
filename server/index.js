@@ -15,7 +15,7 @@ app.use(cors({
     origin: "https://book-store-mern-front-henna.vercel.app",
 }))
 
-app.use("/", (req, res) => {
+app.get("/", (req, res) => {
     res.send("Hello World")
 })
 
