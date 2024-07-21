@@ -19,7 +19,7 @@ app.use(cors({
     optionsSuccessStatus: 200
 }))
 
-app.get("/", (req, res) => {
+app.use("/", (req, res) => {
     res.send("Hello World")
 })
 
