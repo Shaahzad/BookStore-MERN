@@ -47,7 +47,7 @@ const Home = () => {
       </tr>
      </thead>
      <tbody>
-      {Books.map((book,index)=>(
+      {Books?.map((book,index)=>(
         <tr key={book._id} className='h-8'>
 <td className='border border-slate-600 rounded-md text-center'>
 {index+1}
