@@ -12,27 +12,26 @@ const Createbook = () => {
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
 
-  const handelsavebook = async () => {  
-    const newBook = {
-      title,
-      author,
-      publishYear 
-    }
-    setLoading(true)
-    await axios.post("https://book-store-mern-back.vercel.app/books", newBook).then
-    (() => {
-      setLoading(false)
-      navigate("/")
-    }).catch((err)=>{
+  const handelsavebook = async () => { 
+    try {
+      const newBook = {
+        title,
+        author,
+        publishYear 
+      }
+      setLoading(true)
+      await axios.post("https://book-store-mern-back.vercel.app/books", newBook).then
+      (() => {
+        setLoading(false)
+        navigate("/")
+      })  
+    } catch (error) {   
       setLoading(false)
       alert("All fields Are Required")
-      console.log(err)
-    })
+      console.log(error)
+    } 
   }
 
-  useEffect(() => {
-    handelsavebook()
-  }, [])
   return (
     <div className='p-4'>
       <Backbutton/>
