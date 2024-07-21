@@ -15,7 +15,7 @@ const Home = () => {
   useEffect(()=>{
     const fetchBooks = async()=>{
       setLoading(true)
-      const res = await axios.get("http://localhost:5000/books")
+      const res = await axios.get("https://book-store-mern-back.vercel.app/books")
       setBooks(res.data.data)
       setLoading(false)
     }

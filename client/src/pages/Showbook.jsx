@@ -11,7 +11,7 @@ const Showbook = () => {
   const {id} = useParams()
   useEffect(()=>{
     const fetchBookbyid = async()=>{
-      const res = await axios.get(`http://localhost:5000/books/${id}`)
+      const res = await axios.get(`https://book-store-mern-back.vercel.app/books/${id}`)
       setBook(res.data)
       setLoading(false)
     }

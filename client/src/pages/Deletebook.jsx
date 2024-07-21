@@ -11,7 +11,7 @@ const [loading,setloading] = useState(false)
   const navigate = useNavigate()
   const Delete = async ()=>{
     setloading(true)
-    await axios.delete(`http://localhost:5000/books/${id}`)
+    await axios.delete(`https://book-store-mern-back.vercel.app/books/${id}`)
 .then(()=>{
   setloading(false)
   navigate("/")

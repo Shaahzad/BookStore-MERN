@@ -19,7 +19,7 @@ const Createbook = () => {
       publishYear 
     }
     setLoading(true)
-    await axios.post("http://localhost:5000/books", newBook).then
+    await axios.post("https://book-store-mern-back.vercel.app/books", newBook).then
     (() => {
       setLoading(false)
       navigate("/")
