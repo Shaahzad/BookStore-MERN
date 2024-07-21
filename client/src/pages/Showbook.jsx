@@ -9,14 +9,23 @@ const Showbook = () => {
   const [book,setBook] = useState([])
   const [loading,setLoading] = useState(false)
   const {id} = useParams()
-  useEffect(()=>{
-    const fetchBookbyid = async()=>{
+  const fetchBookbyid = async()=>{
+   try {
+      setLoading(true)
       const res = await axios.get(`https://book-store-mern-back.vercel.app/books/${id}`)
       setBook(res.data)
+      setLoading(false)   
+   } catch (error) {
       setLoading(false)
-    }
-    fetchBookbyid()
-  },[])
+      console.log(error)
+   }
+ }
+
+ useEffect(()=>{
+  fetchBookbyid()
+ },[])
+
+
   return (
     <div className='p-4'>
       <BackButton/>
