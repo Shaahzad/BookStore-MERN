@@ -8,12 +8,15 @@ import dotenv from "dotenv";
 
 
 dotenv.config()
+
 const app = express()
-app.use(express.json())
 app.use(cors({
     origin: "https://book-store-mern-front-henna.vercel.app",
     credentials: true
 }))
+
+app.use(express.json())
+
 
 app.get("/", (req, res) => {
     res.send("Hello World")
