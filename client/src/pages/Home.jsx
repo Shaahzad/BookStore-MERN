@@ -11,20 +11,21 @@ import "../index.css"
 const Home = () => {
   const [Books,setBooks] = useState([])
   const [loading,setLoading] = useState(false)
-
-    const fetchBooks = async()=>{
-      try {
-        setLoading(true)
-        const res = await axios.get("https://book-store-mern-back.vercel.app/books")
-        setBooks(res.data.data)
-        setLoading(false)  
-      } catch (error) {
-        setLoading(false)
-        console.log(error)
-      }
+useEffect(() => {
+  const fetchBooks = async()=>{
+    try {
+      setLoading(true)
+      const res = await axios.get("https://book-store-mern-back.vercel.app/books")
+      setBooks(res.data.data)
+      setLoading(false)  
+    } catch (error) {
+      setLoading(false)
+      console.log(error)
     }
+  }
+  fetchBooks()
+},[])
 
-  useEffect(()=>{fetchBooks()},[])
   return (
     <div className='p-4'>
   <div className='flex justify-around items-center'>
