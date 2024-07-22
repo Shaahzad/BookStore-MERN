@@ -15,7 +15,7 @@ useEffect(() => {
   const fetchBooks = async()=>{
     try {
       setLoading(true)
-      const res = await axios.get("https://book-store-mern-back.vercel.app/books/")
+      const res = await axios.get("https://book-store-mern-back.vercel.app/books")
       setBooks(res.data.data)
       setLoading(false)  
     } catch (error) {

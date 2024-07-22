@@ -11,7 +11,8 @@ dotenv.config()
 const app = express()
 app.use(express.json())
 app.use(cors({
-    origin: "https://book-store-mern-front-henna.vercel.app"
+    origin: "https://book-store-mern-front-henna.vercel.app",
+    credentials: true
 }))
 
 app.get("/", (req, res) => {

@@ -26,7 +26,7 @@ const Createbook = () => {
     }
     setLoading(true)
     try {
-      await axios.post("https://book-store-mern-back.vercel.app/books/", newBook)
+      await axios.post("https://book-store-mern-back.vercel.app/books", newBook)
         setLoading(false)
         navigate("/")
     } catch (error) {   
