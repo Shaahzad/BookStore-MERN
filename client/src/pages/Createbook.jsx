@@ -43,8 +43,8 @@ const Createbook = () => {
       {loading ? <Spinner/> : ""}
       <div className='flex flex-col border-2 border-sky-400 rounded-xl w-[600px] mx-auto p-4'>
        <div className='my-4'>
-        <label htmlFor="title" className='text-xl mr-4 text-gray-500'>Title</label>
-        <input value={title} onChange={(e) => setTitle(e.target.value)} 
+       <label htmlFor="title" className='text-xl mr-4 text-gray-500'>Title</label>
+        <input id="title" value={title} onChange={(e) => setTitle(e.target.value)}  
         className='border-2 border-sky-400  px-4 py-1 outline-none w-full' />
        </div>
        <div className='my-4'>

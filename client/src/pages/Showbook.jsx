@@ -11,12 +11,17 @@ const Showbook = () => {
   const {id} = useParams()
   useEffect(()=>{
     const fetchBookbyid = async()=>{
-      const res = await axios.get(`http://localhost:5000/books/${id}`)
-      setBook(res.data)
-      setLoading(false)
+      setLoading(true)
+      try {
+         const res = await axios.get(`http://localhost:5000/books/${id}`)
+         setBook(res.data)
+         setLoading(false)   
+      } catch (error) {
+         console.log(error)
+      }
     }
     fetchBookbyid()
-  },[])
+  },[id])
   return (
     <div className='p-4'>
       <BackButton/>
