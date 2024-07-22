@@ -8,22 +8,6 @@ import BookRoutes from "./routes/index.js"
 
 
 dotenv.config()
-const app = express()
-app.use(express.json())
-
-app.use(cors({
-    origin: "https://book-store-mern-front-sand.vercel.app",
-    credentials: true
-}))
-
-app.use("/books", BookRoutes)
-
-app.get("/", (req, res) => {
-    res.send("Hello World")
-})
-
-
-
 const connect = () => {
     mongoose
         .connect(process.env.MONGO_URL)
@@ -34,6 +18,25 @@ const connect = () => {
             console.log(err);
         });
 };
+
+const app = express()
+
+app.use(cors({
+    origin: "https://book-store-mern-front-sand.vercel.app",
+    credentials: true
+}))
+
+
+app.use(express.json())
+
+app.use("/books", BookRoutes)
+
+app.get("/", (req, res) => {
+    res.send("Hello World")
+})
+
+
+
 
 app.listen(process.env.PORT, () => {
     connect();
