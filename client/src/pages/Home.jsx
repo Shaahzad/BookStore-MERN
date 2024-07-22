@@ -54,23 +54,23 @@ useEffect(() => {
 {index+1}
 </td>
 <td className='border border-slate-600 rounded-md text-center'>
-{book?.title}
+{book.title}
 </td>
 <td className='border border-slate-600 rounded-md max-md:hidden text-center'>
-{book?.author}
+{book.author}
 </td>
 <td className='border border-slate-600 rounded-md max-md:hidden text-center'>
-{book?.publishYear}
+{book.publishYear}
 </td>
  <td className='border border-slate-600 rounded-md'>
   <div className=' flex justify-center gap-x-4'>
-    <Link to={`/books/details/${book?._id}`}>
+    <Link to={`/books/details/${book._id}`}>
     <BsInfoCircle className='text-green-800 text-2xl'/>
     </Link>
-    <Link to={`/books/edit/${book?._id}`}>
+    <Link to={`/books/edit/${book._id}`}>
     <AiOutlineEdit className='text-yellow-800 text-2xl'/>
     </Link>
-    <Link to={`/books/delete/${book?._id}`}>
+    <Link to={`/books/delete/${book._id}`}>
     <MdOutlineDelete className='text-red-800 text-2xl'/>
     </Link>
   </div>
