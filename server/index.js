@@ -16,14 +16,11 @@ app.use(cors({
     credentials: true
 }))
 
-
+app.use("/books", BookRoutes)
 
 app.get("/", (req, res) => {
     res.send("Hello World")
 })
-
-app.use("/books", BookRoutes)
-
 
 
 
